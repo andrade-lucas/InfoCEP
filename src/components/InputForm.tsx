@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import { StyleSheet, View, TextInput, TouchableOpacity, Text } from 'react-native';
+import Icon from 'react-native-easy-icon';
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
-Icon.loadFont();
 
 interface IProps {
     placeholder: string,
@@ -16,7 +15,7 @@ export default function InputForm(props: IProps) {
             <TextInput keyboardType="numeric" maxLength={8} placeholder={props.placeholder} style={styles.formControl} value={cep} 
             onChangeText={value => setCEP(value)} />
             <TouchableOpacity style={styles.btn} onPress={() => props.onPressed(cep)}>
-                <Icon name="search" color="#fff" size={30} style={styles.btnIcon} />
+                <Icon type="antdesign" name="search" color="#fff" size={30} style={styles.btnIcon} />
             </TouchableOpacity>
         </View>
     );
